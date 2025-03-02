@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jeopardy</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="shortcut icon"
+			href="https://cdn-icons-png.flaticon.com/512/272/272611.png"
+			type="image/x-icon"
+		/>
+	</head>
+	<body>
+		<div class="contact-info">
+			<div class="contact-item">t.me/robungid</div>
+			<div class="contact-item">robungidquestion@gmail.com</div>
+		</div>
+
+		<div id="language-changer-container">
+			<button id="button-changelang-russian">🇷🇺</button>
+			<button id="button-changelang-english">🇺🇸</button>
+		</div>
+
+		<div class="main-container">
+			<h1 id="game-name">Jeopardy</h1>
+			<button class="game-editor-button" id="hide-editor">Open game editor</button>
+
+			<div
+				class="game-editor-container hidden-game-editor-container"
+				id="game-editor-container"
+			>
+				<button class="game-editor-button" id="convert-editor">Convert</button>
+				<textarea
+					name="game-data"
+					id="game-editor-area"
+					cols="60"
+					rows="30"
+				></textarea>
+			</div>
+
+			<div class="game-board" id="game-board"></div>
+
+			<div class="modal" id="question-modal">
+				<div class="modal-content">
+					<button id="close-modal">&#10799;</button>
+					<p id="question-text"></p>
+					<button id="show-answer">Show answer</button>
+					<p id="answer-text" class="hidden"></p>
+					<div id="add-scores-button">
+						Add <span id="modal-scores-count">undefined</span> scores to team:
+					</div>
+					<div id="modal-teams"></div>
+				</div>
+			</div>
+
+			<h1 id="teams-title">Teams</h1>
+
+			<div id="team-controls">
+				<div>
+					<input type="text" id="team-name" placeholder="Team name" />
+					<input type="color" id="team-color" value="#ffffff" />
+				</div>
+				<button onclick="addTeam()" id="add-team-button">Add team</button>
+			</div>
+
+			<div id="teams-container">
+				<span id="team-name-title">Name</span>
+				<span id="scores-title">Scores</span>
+				<span class="control-title" id="scores-control-title"
+					>Scores control</span
+				>
+				<span id="delete-team-title">Delete team</span>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
